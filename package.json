@@ -1,0 +1,41 @@
+{
+    "name": "vscode-css-in-jsx",
+    "displayName": "vscode-css-in-jsx",
+    "description": "CSS-in-JSX syntax highlighting for VSCode",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.48.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "grammars": [
+          {
+            "scopeName": "source.css.jsx",
+            "path": "./syntaxes/css.jsx.json"
+          },
+          {
+            "scopeName": "css-in-jsx",
+            "injectTo": [
+              "source.js",
+              "source.ts",
+              "source.jsx",
+              "source.js.jsx",
+              "source.tsx"
+            ],
+            "path": "./syntaxes/css-in-jsx.json",
+            "embeddedLanguages": {
+              "source.css.scss": "css",
+              "meta.embedded.expression.tsx": "typescriptreact"
+            }
+          }
+        ],
+        "typescriptServerPlugins": [
+          {
+            "name": "typescript-styled-plugin",
+            "enableForWorkspaceTypeScriptVersions": true
+          }
+        ]
+    }
+}

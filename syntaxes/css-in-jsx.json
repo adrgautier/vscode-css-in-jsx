@@ -1,0 +1,65 @@
+{
+    "fileTypes": ["js", "jsx", "ts", "tsx"],
+    "injectionSelector": "L:source -comment -string",
+    "patterns": [
+        {
+            "contentName": "source.css.scss",
+            "begin": "(<)(style)(>)",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.tag.begin.ts.tsx"
+                },
+                "1": {
+                    "name": "entity.name.tag.ts.tsx"
+                },
+                "2": {
+                    "name": "punctuation.definition.tag.end.ts.tsx"
+                }
+            },
+            "end": "(</)(style)(>)",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.tag.begin.ts.tsx"
+                },
+                "1": {
+                    "name": "entity.name.tag.ts.tsx"
+                },
+                "2": {
+                    "name": "punctuation.definition.tag.end.ts.tsx"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.css.jsx"
+                }
+            ]
+        },
+        {
+            "contentName": "source.css.scss",
+            "begin": "<style>\\s*(<)(>)",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.tag.begin.ts.tsx"
+                },
+                "1": {
+                    "name": "punctuation.definition.tag.end.ts.tsx"
+                }
+            },
+            "end": "(</)(>)",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.tag.begin.ts.tsx"
+                },
+                "1": {
+                    "name": "punctuation.definition.tag.end.ts.tsx"
+                }
+            },
+            "patterns": [
+                {
+                    "include": "source.css.jsx"
+                }
+            ]
+        }
+    ],
+    "scopeName": "css-in-jsx"
+  }
